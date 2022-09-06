@@ -27,4 +27,18 @@ public class Product {
 
     @Column(nullable = false)
     private int stockQuantity;
+
+    private Product(final String name, final int price, final int stockQuantity) {
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
+
+    public static Product newInstance(final String name, final int price, final int stockQuantity) {
+        return new Product(
+                name,
+                price,
+                stockQuantity
+        );
+    }
 }

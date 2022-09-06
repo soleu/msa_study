@@ -31,7 +31,7 @@ public class ProductController {
     @GetMapping("/{productId}")
     @ApiOperation("제품을 아이디별로 상세 조회합니다.")
     public ProductGetResponse getProductById(@PathVariable Long productId) {
-        return productService.getProductsById(productId);
+        return productService.getProductById(productId);
     }
 
     @GetMapping("")
