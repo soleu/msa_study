@@ -1,6 +1,7 @@
 package com.msa_study.demo.service;
 
 import com.msa_study.demo.common.exception.NotExistsMemberException;
+import com.msa_study.demo.common.exception.NotExistsOrderException;
 import com.msa_study.demo.common.exception.NotExistsProductException;
 import com.msa_study.demo.domain.entity.Member;
 import com.msa_study.demo.domain.entity.Order;
@@ -24,21 +25,30 @@ public class OrderService {
     final ProductRepository productRepository;
     final OrderRepository orderRepository;
 
-    public createOrderResponse createOrder(createOrderRequest request) {
-        Member member = memberRepository.findById(request.getMemberId())
+    public createOrderResponse createOrder(final createOrderRequest request) {
+        final Member member = memberRepository.findById(request.getMemberId())
                 .orElseThrow(NotExistsMemberException::new);
-        Product product = productRepository.findById(request.getProductId())
+        final Product product = productRepository.findById(request.getProductId())
                 .orElseThrow(NotExistsProductException::new);
 
-        Order order = Order.newInstance(member, product, product.getPrice(), OrderStatus.ORDER);
+        final Order order = Order.newInstance(member, product, product.getPrice(), OrderStatus.ORDER);
         orderRepository.save(order);
 
         return createOrderResponse.of(order);
     }
 
-    public getOrderResponse getOrder(Long orderId) {
+    @Transactional(readOnly = true)
+    public getOrderResponse getOrder(final Long orderId) {
+        final Order order = orderRepository.findById(orderId)
+                .orElseThrow(NotExistsOrderException::new);
+
+        return getOrderResponse.of(order);
     }
 
-    public void cancelOrder(Long orderId) {
+    public void cancelOrder(final Long orderId) {
+        final Order order = orderRepository.findById(orderId)
+                .orElseThrow(NotExistsOrderException::new);
+
+        order.cancel();
     }
 }

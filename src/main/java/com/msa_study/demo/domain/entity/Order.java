@@ -40,6 +40,10 @@ public class Order {
         member.getOrders().add(this);
     }
 
+    public void cancel() {
+        this.orderStatus = OrderStatus.CANCEL;
+    }
+
     private Order(final Member member, final Product product, final int orderPrice, final OrderStatus orderStatus) {
         this.product = product;
         this.orderPrice = orderPrice;
