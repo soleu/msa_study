@@ -18,3 +18,7 @@ spring:
         code: 401
         msg: '존재하지 않는 상품 입니다.'
         type: com.msa_study.demo.common.exception.NotExistsProduct
+      notExistsOrder:
+        code: 401
+        msg: '존재하지 않는 주문 입니다.'
+        type: com.msa_study.demo.common.exception.NotExistsOrder
