@@ -1,9 +1,9 @@
 package com.msa_study.demo.controller;
 
 import com.msa_study.demo.service.ProductService;
-import com.msa_study.demo.service.dto.ProductGetResponse;
-import com.msa_study.demo.service.dto.ProductListResponse;
 import com.msa_study.demo.service.dto.request.AddProductRequest;
+import com.msa_study.demo.service.dto.response.ProductGetResponse;
+import com.msa_study.demo.service.dto.response.ProductListResponse;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

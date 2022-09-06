@@ -1,9 +1,9 @@
 package com.msa_study.demo.controller;
 
 import com.msa_study.demo.service.MemberService;
-import com.msa_study.demo.service.dto.MemberCreateResponse;
-import com.msa_study.demo.service.dto.MemberGetResponse;
 import com.msa_study.demo.service.dto.request.MemberCreateRequest;
+import com.msa_study.demo.service.dto.response.MemberCreateResponse;
+import com.msa_study.demo.service.dto.response.MemberGetResponse;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.msa_study.demo.service.dto;
+package com.msa_study.demo.service.dto.response;
 
 import com.msa_study.demo.domain.Product;
 import lombok.AccessLevel;

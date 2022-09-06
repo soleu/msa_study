@@ -1,4 +1,4 @@
-package com.msa_study.demo.service.dto;
+package com.msa_study.demo.service.dto.response;
 
 import com.msa_study.demo.domain.Member;
 import lombok.AccessLevel;
@@ -7,14 +7,17 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class MemberCreateResponse {
+public class MemberGetResponse {
     private Long id;
     private String name;
+    private String address;
 
-    public static MemberCreateResponse of(Member member) {
-        return new MemberCreateResponse(
+    public static MemberGetResponse of(Member member) {
+        return new MemberGetResponse(
                 member.getId(),
-                member.getName()
+                member.getName(),
+                member.getAddress()
         );
     }
+
 }

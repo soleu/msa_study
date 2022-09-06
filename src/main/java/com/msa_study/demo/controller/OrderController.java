@@ -1,9 +1,9 @@
 package com.msa_study.demo.controller;
 
 import com.msa_study.demo.service.OrderService;
-import com.msa_study.demo.service.dto.CreateOrderRequest;
-import com.msa_study.demo.service.dto.CreateOrderResponse;
-import com.msa_study.demo.service.dto.GetOrderResponse;
+import com.msa_study.demo.service.dto.request.CreateOrderRequest;
+import com.msa_study.demo.service.dto.response.CreateOrderResponse;
+import com.msa_study.demo.service.dto.response.GetOrderResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
