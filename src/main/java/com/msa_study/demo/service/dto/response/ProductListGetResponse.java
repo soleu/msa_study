@@ -9,11 +9,11 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class ProductListResponse {
+public class ProductListGetResponse {
     private List<ProductGetResponse> response = new ArrayList<>();
 
-    public static ProductListResponse of(List<ProductGetResponse> responses) {
-        return new ProductListResponse(responses);
+    public static ProductListGetResponse of(List<ProductGetResponse> responses) {
+        return new ProductListGetResponse(responses);
     }
 }
 

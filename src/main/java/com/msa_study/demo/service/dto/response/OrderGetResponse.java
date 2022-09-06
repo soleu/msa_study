@@ -8,15 +8,15 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class GetOrderResponse {
+public class OrderGetResponse {
     private Long orderId;
     private String memberName;
     private String productName;
     private int orderPrice;
     private OrderStatus orderStatus;
 
-    public static GetOrderResponse of(Order order) {
-        return new GetOrderResponse(
+    public static OrderGetResponse of(Order order) {
+        return new OrderGetResponse(
                 order.getId(),
                 order.getMember().getName(),
                 order.getProduct().getName(),

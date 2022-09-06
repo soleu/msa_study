@@ -1,9 +1,9 @@
 package com.msa_study.demo.controller;
 
 import com.msa_study.demo.service.OrderService;
-import com.msa_study.demo.service.dto.request.CreateOrderRequest;
-import com.msa_study.demo.service.dto.response.CreateOrderResponse;
-import com.msa_study.demo.service.dto.response.GetOrderResponse;
+import com.msa_study.demo.service.dto.request.OrderCreateRequest;
+import com.msa_study.demo.service.dto.response.OrderCreateResponse;
+import com.msa_study.demo.service.dto.response.OrderGetResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +20,13 @@ public class OrderController {
 
     //create Order
     @PostMapping("")
-    public CreateOrderResponse createOrder(CreateOrderRequest request) {
+    public OrderCreateResponse createOrder(OrderCreateRequest request) {
         return orderService.createOrder(request);
     }
 
     //주문 확인
     @GetMapping("/{orderId}")
-    public GetOrderResponse getOrder(@PathVariable Long orderId) {
+    public OrderGetResponse getOrder(@PathVariable Long orderId) {
         return orderService.getOrder(orderId);
     }
 
