@@ -1,6 +1,7 @@
 package com.msa_study.demo.controller;
 
 import com.msa_study.demo.service.MemberService;
+import com.msa_study.demo.service.dto.MemberCreateResponse;
 import com.msa_study.demo.service.dto.request.MemberCreateRequest;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,10 @@ public class MemberController {
 
     @PostMapping("")
     @ApiOperation("유저를 생성합니다.")
-    public void createUser(@RequestBody MemberCreateRequest request){
-        memberService.createMember(request);
+    public MemberCreateResponse createUser(@RequestBody MemberCreateRequest request){
+       return memberService.createMember(request);
     }
+
+//    @GetMapping("")
+//    @ApiOperation()
 }
