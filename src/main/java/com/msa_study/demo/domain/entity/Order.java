@@ -33,12 +33,26 @@ public class Order {
 
     private int orderPrice;
 
-    private int count;
-
     private OrderStatus orderStatus;
 
-    public void setMember(Member member){
+    public void setMember(Member member) {
         this.member = member;
         member.getOrders().add(this);
+    }
+
+    private Order(final Member member, final Product product, final int orderPrice, final OrderStatus orderStatus) {
+        this.product = product;
+        this.orderPrice = orderPrice;
+        this.orderStatus = orderStatus;
+        setMember(member);
+    }
+
+    public static Order newInstance(final Member member, final Product product, final int orderPrice, final OrderStatus orderStatus) {
+        return new Order(
+                member,
+                product,
+                orderPrice,
+                orderStatus
+        );
     }
 }
