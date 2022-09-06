@@ -9,16 +9,16 @@ spring:
       alreadyExists:
         code: 401
         msg: '이미 존재하는 회원 입니다.'
-        type : com.msa_study.demo.common.exception.AlreadyExistsMember
+        type : com.msa_study.demo.common.exception.AlreadyExistsMemberException
       notExistsMember:
         code: 401
         msg: '존재하지 않는 회원 입니다.'
-        type: com.msa_study.demo.common.exception.NotExistsMember
+        type: com.msa_study.demo.common.exception.NotExistsMemberException
       notExistsProduct:
         code: 401
         msg: '존재하지 않는 상품 입니다.'
-        type: com.msa_study.demo.common.exception.NotExistsProduct
+        type: com.msa_study.demo.common.exception.NotExistsProductException
       notExistsOrder:
         code: 401
         msg: '존재하지 않는 주문 입니다.'
-        type: com.msa_study.demo.common.exception.NotExistsOrder
+        type: com.msa_study.demo.common.exception.NotExistsOrderException

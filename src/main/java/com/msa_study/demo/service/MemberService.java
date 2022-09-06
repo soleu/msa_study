@@ -1,6 +1,6 @@
 package com.msa_study.demo.service;
 
-import com.msa_study.demo.common.exception.AlreadyExistsMember;
+import com.msa_study.demo.common.exception.AlreadyExistsMemberException;
 import com.msa_study.demo.common.exception.NotExistsMemberException;
 import com.msa_study.demo.domain.entity.Member;
 import com.msa_study.demo.domain.repository.MemberRepository;
@@ -20,7 +20,7 @@ public class MemberService {
 
     public MemberCreateResponse createMember(MemberCreateRequest request) {
         boolean isAlreadyMember = memberRepository.existsByName(request.getName());
-        if (isAlreadyMember) throw new AlreadyExistsMember();
+        if (isAlreadyMember) throw new AlreadyExistsMemberException();
 
         Member member = Member.newInstance(request.getName(), request.getAddress());
         memberRepository.save(member);
