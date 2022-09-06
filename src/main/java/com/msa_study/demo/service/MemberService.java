@@ -19,13 +19,16 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     public MemberCreateResponse createMember(MemberCreateRequest request) {
-        boolean isAlreadyMember = memberRepository.existsByName(request.getName());
-        if (isAlreadyMember) throw new AlreadyExistsMemberException();
+        if (isAlreadyMember(request)) throw new AlreadyExistsMemberException();
 
         Member member = Member.newInstance(request.getName(), request.getAddress());
         memberRepository.save(member);
 
         return MemberCreateResponse.of(member);
+    }
+
+    private boolean isAlreadyMember(MemberCreateRequest request) {
+        return memberRepository.existsByName(request.getName());
     }
 
     @Transactional(readOnly = true)

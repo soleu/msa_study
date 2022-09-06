@@ -10,9 +10,9 @@ import com.msa_study.demo.domain.OrderRepository;
 import com.msa_study.demo.domain.OrderStatus;
 import com.msa_study.demo.domain.Product;
 import com.msa_study.demo.domain.ProductRepository;
-import com.msa_study.demo.service.dto.createOrderRequest;
-import com.msa_study.demo.service.dto.createOrderResponse;
-import com.msa_study.demo.service.dto.getOrderResponse;
+import com.msa_study.demo.service.dto.CreateOrderRequest;
+import com.msa_study.demo.service.dto.CreateOrderResponse;
+import com.msa_study.demo.service.dto.GetOrderResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +25,7 @@ public class OrderService {
     final ProductRepository productRepository;
     final OrderRepository orderRepository;
 
-    public createOrderResponse createOrder(final createOrderRequest request) {
+    public CreateOrderResponse createOrder(final CreateOrderRequest request) {
         final Member member = memberRepository.findById(request.getMemberId())
                 .orElseThrow(NotExistsMemberException::new);
         final Product product = productRepository.findById(request.getProductId())
@@ -34,15 +34,15 @@ public class OrderService {
         final Order order = Order.newInstance(member, product, product.getPrice(), OrderStatus.ORDER);
         orderRepository.save(order);
 
-        return createOrderResponse.of(order);
+        return CreateOrderResponse.of(order);
     }
 
     @Transactional(readOnly = true)
-    public getOrderResponse getOrder(final Long orderId) {
+    public GetOrderResponse getOrder(final Long orderId) {
         final Order order = orderRepository.findById(orderId)
                 .orElseThrow(NotExistsOrderException::new);
 
-        return getOrderResponse.of(order);
+        return GetOrderResponse.of(order);
     }
 
     public void cancelOrder(final Long orderId) {

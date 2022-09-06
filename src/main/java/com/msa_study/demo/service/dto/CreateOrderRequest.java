@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class createOrderRequest {
+public class CreateOrderRequest {
     private Long productId;
     private Long memberId;
     private OrderStatus orderStatus;

@@ -3,7 +3,7 @@ package com.msa_study.demo.controller;
 import com.msa_study.demo.service.ProductService;
 import com.msa_study.demo.service.dto.ProductGetResponse;
 import com.msa_study.demo.service.dto.ProductListResponse;
-import com.msa_study.demo.service.dto.request.addProductRequest;
+import com.msa_study.demo.service.dto.request.AddProductRequest;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ public class ProductController {
 
     @PostMapping("")
     @ApiOperation("제품을 추가합니다.")
-    public void addProduct(@Valid @RequestBody addProductRequest request) {
+    public void addProduct(@Valid @RequestBody AddProductRequest request) {
         productService.addProduct(request);
     }
 

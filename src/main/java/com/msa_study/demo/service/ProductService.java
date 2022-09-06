@@ -5,7 +5,7 @@ import com.msa_study.demo.domain.Product;
 import com.msa_study.demo.domain.ProductRepository;
 import com.msa_study.demo.service.dto.ProductGetResponse;
 import com.msa_study.demo.service.dto.ProductListResponse;
-import com.msa_study.demo.service.dto.request.addProductRequest;
+import com.msa_study.demo.service.dto.request.AddProductRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,8 +20,9 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public void addProduct(final addProductRequest request) {
+    public void addProduct(final AddProductRequest request) {
         final Product product = Product.newInstance(request.getName(), request.getPrice(), request.getStockQuantity());
+        productRepository.save(product);
     }
 
     public ProductGetResponse getProductById(final Long productId) {

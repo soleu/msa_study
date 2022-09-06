@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class addProductRequest {
+public class AddProductRequest {
 
     private String name;
     private int price;
