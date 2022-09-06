@@ -1,6 +1,6 @@
 package com.msa_study.demo.service.dto;
 
-import com.msa_study.demo.domain.entity.Product;
+import com.msa_study.demo.domain.Product;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

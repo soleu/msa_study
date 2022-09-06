@@ -1,7 +1,7 @@
 package com.msa_study.demo.service.dto;
 
-import com.msa_study.demo.domain.entity.Order;
-import com.msa_study.demo.domain.entity.OrderStatus;
+import com.msa_study.demo.domain.Order;
+import com.msa_study.demo.domain.OrderStatus;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

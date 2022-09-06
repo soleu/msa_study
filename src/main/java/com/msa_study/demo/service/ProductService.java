@@ -1,8 +1,8 @@
 package com.msa_study.demo.service;
 
 import com.msa_study.demo.common.exception.NotExistsProductException;
-import com.msa_study.demo.domain.entity.Product;
-import com.msa_study.demo.domain.repository.ProductRepository;
+import com.msa_study.demo.domain.Product;
+import com.msa_study.demo.domain.ProductRepository;
 import com.msa_study.demo.service.dto.ProductGetResponse;
 import com.msa_study.demo.service.dto.ProductListResponse;
 import com.msa_study.demo.service.dto.request.addProductRequest;

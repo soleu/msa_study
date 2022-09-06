@@ -1,6 +1,5 @@
-package com.msa_study.demo.domain.repository;
+package com.msa_study.demo.domain;
 
-import com.msa_study.demo.domain.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

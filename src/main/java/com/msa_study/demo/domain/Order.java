@@ -1,4 +1,4 @@
-package com.msa_study.demo.domain.entity;
+package com.msa_study.demo.domain;
 
 
 import lombok.AccessLevel;

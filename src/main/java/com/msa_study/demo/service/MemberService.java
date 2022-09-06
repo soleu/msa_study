@@ -2,8 +2,8 @@ package com.msa_study.demo.service;
 
 import com.msa_study.demo.common.exception.AlreadyExistsMemberException;
 import com.msa_study.demo.common.exception.NotExistsMemberException;
-import com.msa_study.demo.domain.entity.Member;
-import com.msa_study.demo.domain.repository.MemberRepository;
+import com.msa_study.demo.domain.Member;
+import com.msa_study.demo.domain.MemberRepository;
 import com.msa_study.demo.service.dto.MemberCreateResponse;
 import com.msa_study.demo.service.dto.MemberGetResponse;
 import com.msa_study.demo.service.dto.request.MemberCreateRequest;
