@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Item {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
