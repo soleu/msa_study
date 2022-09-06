@@ -22,7 +22,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @PostMapping("")
+    @PostMapping
     @ApiOperation("제품을 추가합니다.")
     public void addProduct(@Valid @RequestBody ProductAddRequest request) {
         productService.addProduct(request);

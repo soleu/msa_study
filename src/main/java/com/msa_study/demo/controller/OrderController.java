@@ -18,19 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
     private final OrderService orderService;
 
-    //create Order
-    @PostMapping("")
+    @PostMapping
     public OrderCreateResponse createOrder(OrderCreateRequest request) {
         return orderService.createOrder(request);
     }
 
-    //주문 확인
     @GetMapping("/{orderId}")
     public OrderGetResponse getOrder(@PathVariable Long orderId) {
         return orderService.getOrder(orderId);
     }
 
-    //주문 취소
     @DeleteMapping("/{orderId}")
     public void cancelOrder(@PathVariable Long orderId) {
         orderService.cancelOrder(orderId);

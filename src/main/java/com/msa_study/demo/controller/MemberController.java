@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberController {
     private final MemberService memberService;
 
-    @PostMapping("")
+    @PostMapping
     @ApiOperation("유저를 생성합니다.")
     public final MemberCreateResponse createMember(@RequestBody MemberCreateRequest request){
        return memberService.createMember(request);
