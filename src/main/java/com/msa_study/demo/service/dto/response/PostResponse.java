@@ -1,4 +1,4 @@
-package com.msa_study.demo.domain.entity.dto.response;
+package com.msa_study.demo.service.dto.response;
 
 import com.msa_study.demo.domain.entity.Post;
 import lombok.AccessLevel;

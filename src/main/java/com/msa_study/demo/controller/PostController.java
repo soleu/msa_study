@@ -1,11 +1,11 @@
 package com.msa_study.demo.controller;
 
 
-import com.msa_study.demo.domain.entity.dto.request.PostCreateRequest;
-import com.msa_study.demo.domain.entity.dto.request.PostUpdateRequest;
-import com.msa_study.demo.domain.entity.dto.response.PostListResponse;
-import com.msa_study.demo.domain.entity.dto.response.PostResponse;
 import com.msa_study.demo.service.PostService;
+import com.msa_study.demo.service.dto.request.PostCreateRequest;
+import com.msa_study.demo.service.dto.request.PostUpdateRequest;
+import com.msa_study.demo.service.dto.response.PostListResponse;
+import com.msa_study.demo.service.dto.response.PostResponse;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -1,4 +1,4 @@
-package com.msa_study.demo.domain.entity.dto.request;
+package com.msa_study.demo.service.dto.request;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -9,14 +9,12 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class PostCreateRequest {
+public class PostUpdateRequest {
     @NotBlank
-    private String title;
     private String content;
 
     @Builder
-    public PostCreateRequest(String title, String content) {
-        this.title = title;
+    public PostUpdateRequest(String content) {
         this.content = content;
     }
 }

@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -28,4 +29,18 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
+    private Member(final String name, final String address, final List<Order> orders) {
+        this.name = name;
+        this.address = address;
+        this.orders = orders;
+    }
+
+    public static Member newInstance(final String name, final String address) {
+        return new Member(
+                name,
+                address,
+                Collections.emptyList()
+        );
+    }
 }
