@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  response:
+    success:
+      code : 200
+      msg : SUCCESS
+    exceptions:
+      postNotExists:
+        code: 401
+        msg: '글이 존재하지 않습니다. '
+        type : com.msa_study.demo.common.exception.NotExistsPostException
