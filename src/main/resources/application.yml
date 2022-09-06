@@ -6,7 +6,15 @@ spring:
       code : 200
       msg : SUCCESS
     exceptions:
-      postNotExists:
+      alreadyExists:
         code: 401
-        msg: '글이 존재하지 않습니다. '
-        type : com.msa_study.demo.common.exception.NotExistsPostException
+        msg: '이미 존재하는 회원 입니다.'
+        type : com.msa_study.demo.common.exception.AlreadyExistsMember
+      notExistsMember:
+        code: 401
+        msg: '존재하지 않는 회원 입니다.'
+        type: com.msa_study.demo.common.exception.NotExistsMember
+      notExistsProduct:
+        code: 401
+        msg: '존재하지 않는 상품 입니다.'
+        type: com.msa_study.demo.common.exception.NotExistsProduct
