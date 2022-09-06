@@ -25,7 +25,7 @@ public class MemberController {
        return memberService.createMember(request);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/{memberId}")
     @ApiOperation("유저정보를 조회합니다.")
     public final MemberGetResponse getMemberInfo(@PathVariable Long memberId){
         return memberService.getMemberInfo(memberId);
