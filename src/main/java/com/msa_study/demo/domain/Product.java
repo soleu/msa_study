@@ -28,6 +28,10 @@ public class Product {
     @Column(nullable = false)
     private int stockQuantity;
 
+    public void reduceStock() {
+        this.stockQuantity--;
+    }
+
     private Product(final String name, final int price, final int stockQuantity) {
         this.name = name;
         this.price = price;

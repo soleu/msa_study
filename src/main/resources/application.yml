@@ -22,3 +22,7 @@ spring:
         code: 401
         msg: '존재하지 않는 주문 입니다.'
         type: com.msa_study.demo.common.exception.NotExistsOrderException
+      lackOfStock:
+        code: 400
+        msg: '재고가 부족합니다.'
+        type: com.msa_study.demo.common.exception.LackOfStockException

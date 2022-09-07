@@ -1,5 +1,6 @@
 package com.msa_study.demo.service;
 
+import com.msa_study.demo.common.exception.LackOfStockException;
 import com.msa_study.demo.common.exception.NotExistsMemberException;
 import com.msa_study.demo.common.exception.NotExistsOrderException;
 import com.msa_study.demo.common.exception.NotExistsProductException;
@@ -30,9 +31,11 @@ public class OrderService {
                 .orElseThrow(NotExistsMemberException::new);
         final Product product = productRepository.findById(request.getProductId())
                 .orElseThrow(NotExistsProductException::new);
+        if (0 >= product.getStockQuantity()) throw new LackOfStockException();
 
-        final Order order = Order.newInstance(member, product, product.getPrice(), OrderStatus.ORDER);
+            final Order order = Order.newInstance(member, product, product.getPrice(), OrderStatus.ORDER);
         orderRepository.save(order);
+        product.reduceStock();
 
         return OrderCreateResponse.of(order);
     }
